@@ -1,0 +1,27 @@
+.item-table {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+
+}
+
+.cooking-box1{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+
+.item-table-cooking {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+
+}

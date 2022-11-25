@@ -1,0 +1,252 @@
+.react-icon {
+  margin-left: 5px;
+}
+
+.section-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 4rem;
+}
+
+.wrapper {
+  /* position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translate(-50%); */
+
+  position: relative;
+  max-width: 1170px;
+  
+  color: #fff;
+  text-align: center;
+
+  flex-direction: column; 
+  border-style: solid;
+  
+  border-image: url(../assets/orngborders.png) 32 fill/ 32px/ 0 repeat;
+  /* Выше записано в одну строку */
+  /* border-image-slice: 32 32 32 32 fill;
+  border-image-width: 32px 32px 32px 32px;
+  border-image-outset: 0 0 0 0;
+  border-image-repeat: repeat repeat; */
+
+  /* FIXME_№1: Исправляет проблему с полосками от border-image */
+  background-color: #ed9255;
+
+  border-radius: 32px; /*FIXME_№1: по умолчанию было 8px*/
+  border-width: 8px;
+  border-color: transparent;
+
+  padding: 2rem 1rem;
+
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Вариант заднего плана с вырезами и одного цвета  */
+/* 
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  box-shadow: inset 8px 8px 0 rgb(255 255 255 / 20%);
+}
+
+.wrapper-inner::before {
+  content: "";
+    width: 16px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.wrapper-inner::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+} */
+
+.wrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  position: relative;
+  border-image-source: url(../assets/ornginset.png);
+  
+  border-style: solid;
+  border-image-slice: 32 32 32 32 fill;
+  border-image-width: 32px 32px 32px 32px;
+  border-image-outset: 0 0 0 0;
+  border-image-repeat: repeat repeat;
+
+   /* FIXME_№1: Исправляет проблему с полосками от border-image */
+  background-color: #65432c; 
+
+  border-radius: 32px; /*FIXME_№1: по умолчанию было 8px*/
+  border-width: 8px;
+
+   padding: 1.5rem;
+}
+
+.item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.item-table-farming {
+  font-size: 1rem;
+  width: 100%;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5rem;
+  text-shadow: 0 1px 0 #000;
+
+  /* grid-template-areas:
+  "C C C C"
+  "C C C C"
+  "B B B A"; */
+}
+
+.item-table > * {min-width: 50px;}
+/* .box1 {
+  grid-area: A;
+}
+.box2 {
+  grid-area: B;
+  justify-items: center;
+  align-items: center;
+} */
+
+.icon {
+  width: 48px;
+  height: 48px;
+}
+
+.energy-text {
+  color: #fdf201;
+  text-shadow: 0 1px 0 #000;
+}
+
+.sum-energy-text {
+  color: #ed1b24;
+  text-shadow: 0 1px 0 #000;
+}
+
+.rest-energy-text {
+  color: #3cb043;
+  text-shadow: 0 1px 0 #000;
+  width: 13rem;
+  line-height: 1.5rem;
+}
+
+.sum-icon-alt {
+  display: inline-block;
+  transform: translateY(-15px);
+}
+
+.icon-margin {
+  margin: 0 8px
+}
+
+.home.active {
+  transform: translateX(250px);
+}
+
+.item-table-cooking {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+
+}
+
+.cooking-box1{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.item-table-woodwork {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+
+}
+
+/* .woodwork-box1{
+  grid-column-start: 1;
+  grid-column-end: 3;
+} */
+
+.woodwork-box2{
+  width: 24px;
+  height: 24px;
+}
+
+.woodwork-box3{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.item-table-granger {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+
+}
+
+.item-table-forestry {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+
+}
+
+.item-table-aviculture {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+
+}

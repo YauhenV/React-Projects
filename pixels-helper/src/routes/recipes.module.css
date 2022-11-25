@@ -1,0 +1,416 @@
+.section-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 4rem;
+}
+
+.wrapper {
+  width: 1014px;
+  height: 676px;
+  
+  background-image: url(../assets/recipes/crafting_notabs.png);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  text-align: center;
+  color: #000;
+
+  font-family: 'Press Start 2P', cursive;
+}
+
+.wrapper-inner {
+  display: flex;
+  flex-direction: row;
+}
+
+.binding {
+  display: flex;
+  flex-direction: column;
+  width: 128px;
+  height: 676px;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  width: 894px;
+}
+
+.pages {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-left: 32px;
+  width: 50%;
+}
+
+.left-page-inner {
+  display: flex;
+  flex-direction: column;
+  width: 344px;
+  flex-grow: 1;
+  max-height: 580px;
+}
+
+.left-page-header {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  margin-top: 16px;
+}
+
+.left-page-header-title-area {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left-page-header-subtitle-area {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-page-header-title-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/recipes/crafting_border_mechanic.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+
+.left-page-header-title {
+  background-image: url(../assets/recipes/crafting_titleline_mechanic.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  flex-grow: 1;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  max-width: 272px;
+  overflow-x: clip;
+}
+
+.left-page-header-title-icon-img {
+  position: absolute;
+  top: 13px;
+}
+
+.left-page-header-title-text {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px
+}
+
+.left-page-body {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+  max-height: 475px;
+  padding: 10px 10px 0px;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  background-color: #f3c5a9;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.left-page-body-area {
+  margin-top: 22px;
+  display: flex;
+  padding: 0px 0px 0px 8px;
+  flex-direction: column;
+  max-height: 390px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.left-page-body-title-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.left-page-body-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.body-list {
+  margin-top: 12px;
+  margin-bottom: 0px;
+  list-style: inside url(../assets/recipes/crafting_icon_bulletlist.png) circle;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding-left: 0px;
+}
+
+.body-list-item {
+  line-height: 18px;
+  filter: none;
+  text-align: left;
+  cursor: url(../assets/cursor.png) 14 0,pointer;
+}
+
+.body-list-item:hover .body-list-item-text{
+  color: #ed1b24;
+}
+
+.body-list-item-text-area {
+  user-select: none;
+  display: inline-flex;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.body-list-item-text {
+  color: black;
+  text-shadow: none;
+  margin-left: 4px;
+  display: block;
+  padding: 4px;
+  width: 100%;
+  overflow: hidden;
+  font-size: .7em;
+  transform: translateY(3px)
+}
+
+
+.right-page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 48px;
+  width: 50%;
+  height: 566px;
+}
+
+.right-page-inner {
+  flex-direction: column;
+  width: 344px;
+  height: 566px;
+  padding-right: 10px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.right-page-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-grow: 1;
+}
+
+.right-page-body-area {
+  display: flex;
+  flex-grow: 1;
+  background-color: #f3c5a9;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.right-page-body-area-activate {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-grow: 1;
+}
+
+.right-page-body-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+
+  background-color: #f3c5a9;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.right-page-body-header-title-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-page-body-header-title-icon {
+  background-image: url(../assets/recipes/crafting_border_recipe_details.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  height: 66px;
+  width: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-page-body-header-title-icon img{
+  vertical-align: middle;
+  height: 44px;
+}
+
+.right-page-body-header-title{
+  background-image: url(../assets/recipes/crafting_titleline_recipe_details.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  flex-grow: 1;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.right-page-body-header-title-text {
+  font-size: .7em;
+}
+
+.right-page-body-header-body-area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.right-page-body-header-body-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+.right-page-body-header-body-item-text {
+  font-size: .7em;
+  margin-bottom: 0.5rem;
+  padding: 6px;
+}
+
+.experience-text {
+  font-weight: bold;
+    color: red;
+}
+
+.right-page-body-header-body-item-field {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  background-color: rgb(251, 244, 187);
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 12px;
+  display: block;
+}
+
+.right-page-body-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #f3c5a9;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.right-page-body-main-text {
+  text-align: left;
+  overflow-y: hidden;
+  height: 18em;
+  font-size: .7em;
+}
+
+.right-page-body-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: #f3c5a9;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.right-page-body-footer-title-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.right-page-body-footer-title {
+  font-size: 1em;
+  display: block;
+}
+
+.right-page-body-footer-items {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.right-page-body-footer-item-area {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.right-page-body-footer-item-area-plus {
+  position: absolute;
+  z-index: 99;
+  top: 20px;
+  left: 54px;
+}
+
+.right-page-body-footer-item {
+  background-image: url(../assets/recipes/crafting_material_border.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-blend-mode: multiply;
+  flex-grow: 1;
+  display: flex;
+  padding: 4px;
+}
+
+.right-page-body-footer-item-content {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  width: 100%;
+  background-color: rgba(0, 255, 0, 0.125);
+}
+
+.right-page-body-footer-item-img {
+  margin-top: 5px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+
+
+.right-page-body-footer-item-amount-number {
+  width: 100%;
+  text-align: right;
+  font-size: .5em;
+}
