@@ -12,7 +12,7 @@
   margin-bottom: 2rem;
 }
 
-.toggle a:hover  {
+.toggle:hover  {
   opacity: 0.6;
 }
 
