@@ -12,6 +12,10 @@ function Navbar() {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  const [subNav, setSubNav] = useState(false);
+
+  const showSubNav = () => setSubNav(!subNav);
+
   return (
     <>
       <IconContext.Provider value={{ color: "undefined", size: "1.5rem", className: styles.icon }}>
@@ -26,14 +30,21 @@ function Navbar() {
             </li>
             {SidebarData.map((item, index) => {
               return (
-                <li key={index} className={item.cName}>
+                <li key={index} className={item.cName} onClick={item.subNav && showSubNav}>
                   <Link to={item.path}>
                     {item.icon}
                     <span>{item.title}</span>
+                    {item.subNav && subNav 
+                      ? item.iconClosed
+                      : item.subNav
+                      ? item.iconOpened
+                      : null
+                    }
                   </Link>
               </li>
               );
             })}
+
           </ul>
         </nav>
       </IconContext.Provider>
