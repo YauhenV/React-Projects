@@ -2,6 +2,7 @@ import React from 'react';
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
 import * as RiIcons from "react-icons/ri";
+import * as SlIcons from "react-icons/sl";
 
 
 import styles from "./navbar.module.css";
@@ -9,7 +10,7 @@ import styles from "./navbar.module.css";
 export const SidebarData = [
   {
     title: "Energy",
-    icon: <BsIcons.BsBattery />,
+    icon: <SlIcons.SlEnergy />,
     cName: styles["nav-text"],
     cSubName: styles["nav-subNav"],
     iconOpened: <RiIcons.RiArrowDownSLine />,
