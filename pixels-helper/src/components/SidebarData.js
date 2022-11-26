@@ -11,6 +11,7 @@ export const SidebarData = [
     title: "Energy",
     icon: <BsIcons.BsBattery />,
     cName: styles["nav-text"],
+    cSubName: styles["nav-subNav"],
     iconOpened: <RiIcons.RiArrowDownSLine />,
     iconClosed: <RiIcons.RiArrowUpSLine />,
     subNav: [
@@ -18,52 +19,52 @@ export const SidebarData = [
         title: "requires",
         path: "/",
         icon: <BsIcons.BsBattery />,
-        cName: styles["nav-text"],
+        cName: styles["nav-subNav-text"],
       },
       {
         title: "recovery",
         path: "/recoveryEnergy",
         icon: <BsIcons.BsBatteryFull />,
-        cName: styles["nav-text"],
+        cName: styles["nav-subNav-text"],
       },
     ]
   },
   {
-    title: "requires energy",
-    path: "/",
-    icon: <BsIcons.BsBattery />,
-    cName: styles["nav-text"],
-  },
-  {
-    title: "recovery energy",
-    path: "/recoveryEnergy",
-    icon: <BsIcons.BsBatteryFull />,
-    cName: styles["nav-text"],
-  },
-  {
     title: "recipes",
-    path: "/recipesCooking",
+    path: "",
     icon: <FaIcons.FaBookOpen />,
     cName: styles["nav-text"],
-  },
-  {
-    title: "recipes",
-    path: "/recipesWoodwork",
-    icon: <FaIcons.FaBookOpen />,
-    cName: styles["nav-text"],
-  },
-  {
-    title: "recipes",
-    path: "/recipesGranger",
-    icon: <FaIcons.FaBookOpen />,
-    cName: styles["nav-text"],
+    cSubName: styles["nav-subNav"],
+    iconOpened: <RiIcons.RiArrowDownSLine />,
+    iconClosed: <RiIcons.RiArrowUpSLine />,
+    subNav: [
+      {
+        title: "Cooking",
+        path: "/recipesCooking",
+        icon: <FaIcons.FaBookOpen />,
+        cName: styles["nav-subNav-text"],
+      },
+      {
+        title: "Woodwork",
+        path: "/recipesWoodwork",
+        icon: <FaIcons.FaBookOpen />,
+        cName: styles["nav-subNav-text"],
+      },
+      {
+        title: "Granger",
+        path: "/recipesGranger",
+        icon: <FaIcons.FaBookOpen />,
+        cName: styles["nav-subNav-text"],
+      },
+
+    ]
   },
   {
     title: "calculator",
     path: "/calculators",
     icon: <FaIcons.FaCalculator />,
     cName: styles["nav-text"],
-  }
+  },
 ];
 
 

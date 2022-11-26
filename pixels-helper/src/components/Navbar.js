@@ -30,18 +30,31 @@ function Navbar() {
             </li>
             {SidebarData.map((item, index) => {
               return (
-                <li key={index} className={item.cName} onClick={item.subNav && showSubNav}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                    {item.subNav && subNav 
-                      ? item.iconClosed
-                      : item.subNav
-                      ? item.iconOpened
-                      : null
-                    }
-                  </Link>
-              </li>
+                <li key={index} className={`${item.cName} (${subNav} &&  ${styles["new-nav-text"]})`} onClick={item.subNav && showSubNav}>
+                  <div className={item.cSubName}>
+                    <div>
+                      <Link to={item.path}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                        {item.subNav && subNav 
+                          ? item.iconClosed
+                          : item.subNav
+                          ? item.iconOpened
+                          : null
+                        }
+                      </Link>
+                    </div>
+                    {item.subNav && subNav && item.subNav.map((item, index) => {
+                      return (
+                        <div key={index} className={item.cName}>
+                          <Link to={item.path}>
+                            <span>{item.title}</span>
+                          </Link>
+                        </div>
+                      )
+                    })}
+                  </div>  
+                </li>
               );
             })}
 
