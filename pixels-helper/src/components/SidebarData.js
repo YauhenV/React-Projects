@@ -10,6 +10,7 @@ import styles from "./navbar.module.css";
 export const SidebarData = [
   {
     title: "Energy",
+    path: "",
     icon: <SlIcons.SlEnergy />,
     cName: styles["nav-text"],
     cSubName: styles["nav-subNav"],

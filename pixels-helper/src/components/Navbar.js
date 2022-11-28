@@ -5,16 +5,16 @@ import * as AiIcons from "react-icons/ai";
 import { IconContext } from 'react-icons/lib';
 import {SidebarData} from "./SidebarData";
 import styles from "./navbar.module.css";
+import SubMenu from './SubMenu';
 
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
+  let subMenuFlag = false;
 
-  const showSidebar = () => setSidebar(!sidebar);
-
-  const [subNav, setSubNav] = useState(false);
-
-  const showSubNav = () => setSubNav(!subNav);
+  const showSidebar = () => {
+    setSidebar(!sidebar);
+  };
 
   return (
     <>
@@ -29,32 +29,13 @@ function Navbar() {
               </div>
             </li>
             {SidebarData.map((item, index) => {
+              console.log(subMenuFlag);
               return (
-                <li key={index} className={`${item.cName} (${subNav} &&  ${styles["new-nav-text"]})`} onClick={item.subNav && showSubNav}>
-                  <div className={item.cSubName}>
-                    <div>
-                      <Link to={item.path}>
-                        {item.icon}
-                        <span>{item.title}</span>
-                        {item.subNav && subNav 
-                          ? item.iconClosed
-                          : item.subNav
-                          ? item.iconOpened
-                          : null
-                        }
-                      </Link>
-                    </div>
-                    {item.subNav && subNav && item.subNav.map((item, index) => {
-                      return (
-                        <div key={index} className={item.cName}>
-                          <Link to={item.path}>
-                            <span>{item.title}</span>
-                          </Link>
-                        </div>
-                      )
-                    })}
-                  </div>  
-                </li>
+                <SubMenu 
+                  item={item}
+                  key={index}
+                  subMenuFlag={subMenuFlag}
+                 />
               );
             })}
 

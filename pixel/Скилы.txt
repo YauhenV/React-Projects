@@ -1,10 +1,47 @@
-готовк:
+готовкa:
 2 уровень - 345xp
 3 уровень - 487xp
+4 уровень - 644xp
 
 фермерство:
 8 уровень - 1456xp
+9 уровень - 1713xp
+
+Деревообработка:
+1 уровень - 216xp
+
+Срубка дерева:
+1 уровень - 216xp
+
+Мукамолка:
+3 уровень - 487xp
+
+Животноводство:
+1 уровень - 100xp
+
+Pancakes - 8xp e: 5.5 cost: 15b
+Plain Omelet - 1xp e: 1.2 cost: 1b
+Popberry Loaf - 19xp e: 13.1 cost: 35b
+Popberry Pie - 8xp e: 5,9 cost: 18b
+Мука - 10xp cost: 16b
+
+Stick - 1xp e: 1 
+Wooden Stole - 14xp e: 1
+Fallen Log - 16xp e: 1
 
 
-Popberry Pie - 8xp
-Мука - 10xp
+
+Popberry - cost: 3b
+Grainbow - cost: 7b
+Butterberry - cost: 4b
+Grumpkin - cost: 17b
+
+
+Поливка - e: 0.5
+
+Butterberry seeds - cost: 1b e: 2
+Popberry seed - cost: 1b e: 2
+Grainbow seeds - cost: 3b e: 2.5
+Grumpkin seed - cost: 9b
+
+
