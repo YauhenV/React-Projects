@@ -15,11 +15,7 @@ function Navbar() {
     setSidebar(!sidebar);
   };
 
-  const [subNav, setSubNav] = useState(false);
-
-  const showSubNav = () => {
-    setSubNav(!subNav);
-  };
+  
 
   return (
     <>
@@ -35,47 +31,10 @@ function Navbar() {
             </li>
             {SidebarData.map((item, index) => {
               return (
-                <li className={`${item.cName}`} key={index} onClick={item.subNav && showSubNav}>
-        <div className={item.cSubName}>
-          <div>
-          {item.subNav ? (
-            <Link>
-              {item.icon}
-              <span>{item.title}</span>
-              {item.subNav && subNav 
-                ? item.iconOpened
-                : item.subNav
-                ? item.iconClosed
-                : null
-              }
-            </Link>
-          )
-          : (
-              <Link to={item.path}>
-                {item.icon}
-                <span>{item.title}</span>
-                {item.subNav && subNav 
-                  ? item.iconOpened
-                  : item.subNav
-                  ? item.iconClosed
-                  : null
-                }
-              </Link>
-          )}
-            
-          </div>
-          {item.subNav && subNav && item.subNav.map((item, index) => {
-            return (
-              <div key={index} className={item.cName}>
-                <Link to={item.path}>
-                  <span>{item.title}</span>
-                </Link>
-              </div>
-            )
-          })} 
-        </div>  
-      </li>
- 
+                <SubMenu 
+                  item={item}
+                  key={index}
+                 />
               );
             })}
 
