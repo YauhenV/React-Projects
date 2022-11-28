@@ -5,12 +5,14 @@ import styles from "./navbar.module.css";
 function SubMenu( {item}) {
 
   const [subNav, setSubNav] = useState(false);
+  const [textDecoration, setTextDecoration] = useState("underline");
 
   const showSubNav = () => {
     setSubNav(!subNav);
+    setTextDecoration("none");
+    console.log(textDecoration)
   };
 
-  const textDecoration = "none";
 
 
   return (
@@ -18,8 +20,7 @@ function SubMenu( {item}) {
         <div className={item.cSubName}>
           <div>
           {item.subNav ? (
-            {subNav ?  <Link className={styles["link-underline"]}> : <Link className={styles["link-none"]}>}
-            <Link className={`${subNav} ? ${styles["link-none"]} : ${styles["link-underline"]}`}>
+            <Link style={{textDecoratin: textDecoration}}>
               {item.icon}
               <span>{item.title}</span>
               {item.subNav && subNav 
