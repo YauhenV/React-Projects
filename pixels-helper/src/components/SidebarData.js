@@ -8,27 +8,6 @@ import styles from "./navbar.module.css";
 
 export const SidebarData = [
   {
-    title: "Energy",
-    icon: <BsIcons.BsBattery />,
-    cName: styles["nav-text"],
-    iconOpened: <RiIcons.RiArrowDownSLine />,
-    iconClosed: <RiIcons.RiArrowUpSLine />,
-    subNav: [
-      {
-        title: "requires",
-        path: "/",
-        icon: <BsIcons.BsBattery />,
-        cName: styles["nav-text"],
-      },
-      {
-        title: "recovery",
-        path: "/recoveryEnergy",
-        icon: <BsIcons.BsBatteryFull />,
-        cName: styles["nav-text"],
-      },
-    ]
-  },
-  {
     title: "requires energy",
     path: "/",
     icon: <BsIcons.BsBattery />,
@@ -41,19 +20,19 @@ export const SidebarData = [
     cName: styles["nav-text"],
   },
   {
-    title: "recipes",
+    title: "cooking recipes",
     path: "/recipesCooking",
     icon: <FaIcons.FaBookOpen />,
     cName: styles["nav-text"],
   },
   {
-    title: "recipes",
+    title: "woodwork recipes",
     path: "/recipesWoodwork",
     icon: <FaIcons.FaBookOpen />,
     cName: styles["nav-text"],
   },
   {
-    title: "recipes",
+    title: "granger recipes",
     path: "/recipesGranger",
     icon: <FaIcons.FaBookOpen />,
     cName: styles["nav-text"],
