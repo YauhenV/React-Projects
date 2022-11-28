@@ -38,6 +38,12 @@ export const SidebarData = [
     cName: styles["nav-text"],
   },
   {
+    title: "items",
+    path: "/items",
+    icon: <FaIcons.FaSitemap />,
+    cName: styles["nav-text"],
+  },
+  {
     title: "calculator",
     path: "/calculators",
     icon: <FaIcons.FaCalculator />,

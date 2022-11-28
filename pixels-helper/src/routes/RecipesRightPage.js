@@ -1,4 +1,6 @@
 import React from 'react';
+import { IconContext } from 'react-icons/lib';
+import * as SlIcons from "react-icons/sl";
 import styles from "./recipes.module.css";
 
 function RecipesRightPage(props) {
@@ -46,74 +48,91 @@ function RecipesRightPage(props) {
     }
   };
 
+  const showEnergyRecovery = (item) => {
+    if (item) {
+      return (
+        <div className={`${styles["right-page-body-header-body-item-field"]} ${styles["rest-energy-text"]}`}> 
+          {item} <SlIcons.SlEnergy />
+        </div>
+      )
+    }
+  }
+
   return (
     //Отображение на правой странице описательной части
-    <div className={styles["right-page-body-area-activate"]}>
-      <div className={styles["right-page-body-header"]}>
-        <div className={styles["right-page-body-header-title-area"]}>
-          <div className={styles["right-page-body-header-title-icon"]}>
-            <img src={require("../assets/" + props.recipesData[props.recipeSelection].icon)} height="44" alt="Plain Omelet" />
-          </div>
-          <div className={styles["right-page-body-header-title"]}>
-            <div className={styles["right-page-body-header-title-text"]}>
-              {props.recipesData[props.recipeSelection].name}
-            </div>
-          </div>
-        </div>
-        <div className={styles["right-page-body-header-body-area"]}>
-          <div className={styles["right-page-body-header-body-items"]}>
-            <div className={styles["right-page-body-header-body-item-text"]}>
-              Craft Time
-            </div>
-            <div className={styles["right-page-body-header-body-item-text"]}>
-              Experience
-            </div>
-            <div className={styles["right-page-body-header-body-item-text"]}>
-              Price
-            </div>
-          </div>
-          <div className={styles["right-page-body-header-body-items"]}>
-            <div className={styles["right-page-body-header-body-item-field"]}> 
-              {props.recipesData[props.recipeSelection].craftTime}
-            </div>
-            <div className={`${styles["right-page-body-header-body-item-field"]} ${styles["experience-text"]}`}> 
-              {props.recipesData[props.recipeSelection].experience} XP
-            </div>
-            <div className={styles["right-page-body-header-body-item-field"]}> 
-              {props.recipesData[props.recipeSelection].price} <img src={require("../assets/berry-coin.png")} width="16px" height="16px" alt='Berry Coin' />
-            </div>
-          </div>
-        </div>
+    <IconContext.Provider value={{ color: "undefined", size: "1rem"}}>
 
-        {/* <div className={styles["right-page-body-header-body-area"]}>
-          <div className={styles["right-page-body-header-body-items"]}>
-            <div className={styles["right-page-body-header-body-item-text"]}>
-              Craft Time
+      <div className={styles["right-page-body-area-activate"]}>
+        <div className={styles["right-page-body-header"]}>
+          <div className={styles["right-page-body-header-title-area"]}>
+            <div className={styles["right-page-body-header-title-icon"]}>
+              <img src={require("../assets/" + props.recipesData[props.recipeSelection].icon)} height="44" alt="Plain Omelet" />
             </div>
-            <div className={styles["right-page-body-header-body-item-field"]}> 
-              {props.recipesData[props.recipeSelection].craftTime}
+            <div className={styles["right-page-body-header-title"]}>
+              <div className={styles["right-page-body-header-title-text"]}>
+                {props.recipesData[props.recipeSelection].name}
+              </div>
             </div>
           </div>
-        </div>
-       */}
+          <div className={styles["right-page-body-header-body-area"]}>
+            <div className={styles["right-page-body-header-body-items"]}>
+              <div className={styles["right-page-body-header-body-item-text"]}>
+                Craft Time
+              </div>
+              <div className={styles["right-page-body-header-body-item-text"]}>
+                Experience
+              </div>
+              <div className={styles["right-page-body-header-body-item-text"]}>
+                Recovery Energy
+              </div>
+              <div className={styles["right-page-body-header-body-item-text"]}>
+                Price
+              </div>
+            </div>
+            <div className={styles["right-page-body-header-body-items"]}>
+              <div className={styles["right-page-body-header-body-item-field"]}> 
+                {props.recipesData[props.recipeSelection].craftTime}
+              </div>
+              <div className={`${styles["right-page-body-header-body-item-field"]} ${styles["experience-text"]}`}> 
+                {props.recipesData[props.recipeSelection].experience} XP
+              </div>
+              {showEnergyRecovery(props.recipesData[props.recipeSelection].energyRecovery)}
+              <div className={styles["right-page-body-header-body-item-field"]}> 
+                {props.recipesData[props.recipeSelection].price} <img src={require("../assets/berry-coin.png")} width="16px" height="16px" alt='Berry Coin' />
+              </div>
+            </div>
+          </div>
 
-      </div>
-      <div className={styles["right-page-body-main"]}>
-        <div className={styles["right-page-body-main-text"]}>
-        {props.recipesData[props.recipeSelection].text}
+          {/* <div className={styles["right-page-body-header-body-area"]}>
+            <div className={styles["right-page-body-header-body-items"]}>
+              <div className={styles["right-page-body-header-body-item-text"]}>
+                Craft Time
+              </div>
+              <div className={styles["right-page-body-header-body-item-field"]}> 
+                {props.recipesData[props.recipeSelection].craftTime}
+              </div>
+            </div>
+          </div>
+         */}
+
         </div>
-      </div>
-      <div className={styles["right-page-body-footer"]}>
-        <div className={styles["right-page-body-footer-title-area"]}>
-          <div className={styles["right-page-body-footer-title"]}>
-            Required Items
+        <div className={styles["right-page-body-main"]}>
+          <div className={styles["right-page-body-main-text"]}>
+          {props.recipesData[props.recipeSelection].text}
           </div>
         </div>
-        <div className={styles["right-page-body-footer-items"]}>
-          {recipesSeveralItemsNeeded()}
+        <div className={styles["right-page-body-footer"]}>
+          <div className={styles["right-page-body-footer-title-area"]}>
+            <div className={styles["right-page-body-footer-title"]}>
+              Required Items
+            </div>
+          </div>
+          <div className={styles["right-page-body-footer-items"]}>
+            {recipesSeveralItemsNeeded()}
+          </div>
         </div>
       </div>
-    </div>
+    </IconContext.Provider>
   )
 }
 

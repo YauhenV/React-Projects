@@ -304,7 +304,13 @@
 
 .experience-text {
   font-weight: bold;
-    color: red;
+  color: red;
+}
+
+/* Дубликат из route.module.css */
+.rest-energy-text {
+  color: #3cb043;
+  font-weight: bold;
 }
 
 .right-page-body-header-body-item-field {
@@ -330,7 +336,7 @@
 .right-page-body-main-text {
   text-align: left;
   overflow-y: hidden;
-  height: 18em;
+  /* height: 18em; */
   font-size: .7em;
 }
 

@@ -41,7 +41,7 @@ function ConsumptionEnergy() {
             <h2>Requires Energy</h2>
             <div className={stylesRoute.items}>
               <div className={stylesRoute.item}>
-                <h3>Farming</h3>
+                <h3 className={stylesRoute["item-header"]}>Farming</h3>
                 <div className={stylesRoute["item-table-farming"]}>
 
                   {/* {itemPropsData(ItemData[0]).map((item, index) => {
@@ -102,7 +102,7 @@ function ConsumptionEnergy() {
               </div> 
 
               <div className={stylesRoute.item}>
-                <h3>Cooking</h3>
+                <h3 className={stylesRoute["item-header"]}>Cooking</h3>
                 <div className={stylesRoute["item-table-cooking"]}>
                   <div>
                     <img className={stylesRoute.icon} src={require("../assets/cooking-icon/omelet-icon.png")} alt='Omelet'></img>
@@ -117,7 +117,7 @@ function ConsumptionEnergy() {
               </div>
 
               <div className={stylesRoute.item}>
-                <h3>Woodwork</h3>
+                <h3 className={stylesRoute["item-header"]}>Woodwork</h3>
                 <div className={stylesRoute["item-table-woodwork"]}>
                   <div>
                     <img src={require("../assets/woodwork-icon/fallen_log-icon.png")} alt='Fallen Log'></img>
@@ -135,7 +135,7 @@ function ConsumptionEnergy() {
               </div>
 
               <div className={stylesRoute.item}>
-                <h3>Granger</h3>
+                <h3 className={stylesRoute["item-header"]}>Granger</h3>
                 <div className={stylesRoute["item-table-granger"]}>
                   <div>
                     <img className={stylesRoute.icon} src={require("../assets/granger-icon/flour-icon.png")} alt='Flour'></img>
@@ -147,7 +147,7 @@ function ConsumptionEnergy() {
               </div>
 
               <div className={stylesRoute.item}>
-                <h3>Forestry</h3>
+                <h3 className={stylesRoute["item-header"]}>Forestry</h3>
                 <div className={stylesRoute["item-table-forestry"]}>
                   <div>
                     <img className={stylesRoute.icon} src={require("../assets/forestry-icon/axe-icon.png")} alt='Axe'></img>
@@ -165,7 +165,7 @@ function ConsumptionEnergy() {
               </div>
 
               <div className={stylesRoute.item}>
-                <h3>Aviculture</h3>
+                <h3 className={stylesRoute["item-header"]}>Aviculture</h3>
                 <div className={stylesRoute["item-table-aviculture"]}>
                   <div>
                     <img className={stylesRoute.icon} src={require("../assets/aviculture-icon/egg-icon.png")} alt='Egg'></img>

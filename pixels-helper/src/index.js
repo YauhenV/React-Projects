@@ -29,6 +29,7 @@ import Navbar from "./components/Navbar";
 import "./index.css";
 import RecipesGranger from "./routes/RecipesGranger";
 import RecipesWoodwork from "./routes/RecipesWoodwork";
+import Items from "./routes/Items";
 
 const AppLayout = () => (
   <>
@@ -44,6 +45,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/recipesCooking" element=<RecipesCooking /> />
     <Route path="/recipesWoodwork" element=<RecipesWoodwork /> />
     <Route path="/recipesGranger" element=<RecipesGranger /> />
+    <Route path="/items" element=<Items /> />
     <Route path="/calculators" element=<Calculators /> />
   </Route>
 ))
