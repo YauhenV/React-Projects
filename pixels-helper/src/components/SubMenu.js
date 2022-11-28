@@ -1,28 +1,46 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./navbar.module.css";
 
-function SubMenu( {item}) {
-
+function SubMenu({item, showSubMenuRightNow} ) {
   const [subNav, setSubNav] = useState(false);
-  const [textDecoration, setTextDecoration] = useState("underline");
+  const [textDecoration, setTextDecoration] = useState(false);
+
+  useEffect(() => {
+    setSubNav(showSubMenuRightNow)
+  }, [showSubMenuRightNow])
 
   const showSubNav = () => {
     setSubNav(!subNav);
-    setTextDecoration("none");
-    console.log(textDecoration)
+    if (subNav) {
+      setTextDecoration(false)
+    } else {
+      setTextDecoration(styles.link)
+    };
   };
+
+  //Убрано дублирование кода в отображении sidebar есть ли подменю или нет
+  const showSidebarTitle = () => {
+    return (
+      <>
+        {item.icon}
+        <span>{item.title}</span>
+      </>
+    )
+  }
 
 
 
   return (
-      <li className={`${item.cName}`} onClick={item.subNav && showSubNav}>
-        <div className={item.cSubName}>
-          <div>
-          {item.subNav ? (
-            <Link style={{textDecoratin: textDecoration}}>
-              {item.icon}
-              <span>{item.title}</span>
+    <>
+    {console.log()}
+      <li className={`${item.cName}`} >
+        <div className={item.cSubName} >
+        {/*Разные стили и сслыки для пунктов с подменю и без*/}
+          {item.subNav 
+          ? (
+            <Link className={`${textDecoration}`} onClick={showSubNav}>
+              {showSidebarTitle()}
               {item.subNav && subNav 
                 ? item.iconOpened
                 : item.subNav
@@ -30,32 +48,24 @@ function SubMenu( {item}) {
                 : null
               }
             </Link>
-          )
-          : (
+          ) : (
               <Link to={item.path}>
-                {item.icon}
-                <span>{item.title}</span>
-                {item.subNav && subNav 
-                  ? item.iconOpened
-                  : item.subNav
-                  ? item.iconClosed
-                  : null
-                }
+                {showSidebarTitle()}
               </Link>
           )}
-            
-          </div>
-          {subNav && item.subNav.map((item, index) => {
-            return (
-              <div key={index} className={item.cName}>
-                <Link to={item.path}>
-                  <span>{item.title}</span>
-                </Link>
-              </div>
-            )
-          })} 
+          
+          {/*Выводим подменю */}
+          {item.subNav && subNav && item.subNav.map((item, index) => {
+             return (
+              <Link to={item.path}  key={index} className={item.cName}>
+              <span>{item.title}</span>
+              </Link>
+        )
+      })} 
         </div>  
       </li>
+      
+    </>
   )
 }
 

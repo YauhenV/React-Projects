@@ -1,7 +1,4 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import { IconContext } from 'react-icons/lib';
 import {SidebarData} from "./SidebarData";
 import styles from "./navbar.module.css";
@@ -14,7 +11,6 @@ function Navbar() {
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
-
   
 
   return (
@@ -34,6 +30,7 @@ function Navbar() {
                 <SubMenu 
                   item={item}
                   key={index}
+                  showSubMenuRightNow={sidebar}
                  />
               );
             })}
