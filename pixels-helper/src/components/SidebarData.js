@@ -33,7 +33,7 @@ export const SidebarData = [
   },
   {
     title: "recipes",
-    path: "",
+    path: "/recipesCooking",
     icon: <FaIcons.FaBookOpen />,
     cName: styles["nav-text"],
     cSubName: styles["nav-subNav"],

@@ -67,13 +67,8 @@
   /* margin-bottom: 0.5rem; */
 }
 
-.new-nav-text a {
-  text-decoration: none;
-  color: #fff;
-}
-
 .nav-text a {
-  text-decoration: underline;
+
   color: #fff;
   font-size: 1rem;
   height: 100%;
@@ -84,9 +79,19 @@
   text-decoration-thickness: 2px;
 }
 
+.link-underline {
+  text-decoration: underline;
+}
+
+.link-none {
+  text-decoration: none;
+}
+
 .nav-text a:hover {
   opacity: 0.6;
 }
+
+
 
 .nav-subNav:last-child {
   margin-bottom: -0.5rem;

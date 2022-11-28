@@ -10,7 +10,6 @@ import SubMenu from './SubMenu';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
-  let subMenuFlag = false;
 
   const showSidebar = () => {
     setSidebar(!sidebar);
@@ -29,12 +28,10 @@ function Navbar() {
               </div>
             </li>
             {SidebarData.map((item, index) => {
-              console.log(subMenuFlag);
               return (
                 <SubMenu 
                   item={item}
                   key={index}
-                  subMenuFlag={subMenuFlag}
                  />
               );
             })}
