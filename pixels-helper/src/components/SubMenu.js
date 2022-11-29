@@ -5,11 +5,15 @@ import styles from "./navbar.module.css";
 import animationSubMenu from "./animationSubMenu.module.css";;
 
 function SubMenu( {item, showSubMenuRightNow, showSidebar} ) {
+  // let ktoOtrilMenu;
   const [subNav, setSubNav] = useState(false);
   const [textDecoration, setTextDecoration] = useState(false);
 
- function showSubNav () {
+ function showSubNav (event) {
+  // ktoOtrilMenu = event.target.closest("a").id;
+  // console.log(ktoOtrilMenu)
   setSubNav(!subNav);
+
 
   // Открывает окно меню при нажатии на пункт с субменю
   if (showSubMenuRightNow === false) {
@@ -50,7 +54,7 @@ function SubMenu( {item, showSubMenuRightNow, showSidebar} ) {
         {/*Разные стили и сслыки для пунктов с подменю и без*/}
           {item.subNav 
           ? (
-            <Link className={`${textDecoration}`} onClick={showSubNav}>
+            <Link className={`${textDecoration}`} onClick={showSubNav} id={"subMenu"}>
               {showSidebarTitle()}
               {item.subNav && subNav 
                 ? item.iconOpened

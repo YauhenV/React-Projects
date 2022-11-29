@@ -8,7 +8,8 @@ import SubMenu from './SubMenu';
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
-  const showSidebar = () => {
+  const showSidebar = (event) => {
+    // console.log(event.target.closest('div'))
     setSidebar(!sidebar);
   };
   
