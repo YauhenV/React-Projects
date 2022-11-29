@@ -15,10 +15,11 @@ function Navbar() {
     setSidebar(!sidebar);
   };
 
-  const [subNav, setSubNav] = useState(false);
+  const [subNavArray, setSubNavArray] = useState(SidebarData.map(_ => false));
 
-  const showSubNav = () => {
-    setSubNav(!subNav);
+  const showSubNavArray = (index) => {
+    const updatedSubNavArray = subNavArray.map((element, navIndex) => navIndex === index ? !element : element)
+    setSubNavArray(updatedSubNavArray)
   };
 
   return (
@@ -35,14 +36,14 @@ function Navbar() {
             </li>
             {SidebarData.map((item, index) => {
               return (
-                <li className={`${item.cName}`} key={index} onClick={item.subNav && showSubNav}>
+                <li className={`${item.cName}`} key={index} onClick={item.subNav && (() => showSubNavArray(index))}>
         <div className={item.cSubName}>
           <div>
           {item.subNav ? (
             <Link>
               {item.icon}
               <span>{item.title}</span>
-              {item.subNav && subNav 
+              {item.subNav && subNavArray[index] 
                 ? item.iconOpened
                 : item.subNav
                 ? item.iconClosed
@@ -54,7 +55,7 @@ function Navbar() {
               <Link to={item.path}>
                 {item.icon}
                 <span>{item.title}</span>
-                {item.subNav && subNav 
+                {item.subNav && subNavArray[index] 
                   ? item.iconOpened
                   : item.subNav
                   ? item.iconClosed
@@ -64,7 +65,7 @@ function Navbar() {
           )}
             
           </div>
-          {item.subNav && subNav && item.subNav.map((item, index) => {
+          {item.subNav && subNavArray[index] && item.subNav.map((item, index) => {
             return (
               <div key={index} className={item.cName}>
                 <Link to={item.path}>
