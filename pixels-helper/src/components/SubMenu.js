@@ -1,23 +1,37 @@
 import React, {useState, useEffect} from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import styles from "./navbar.module.css";
+import animationSubMenu from "./animationSubMenu.module.css";;
 
-function SubMenu({item, showSubMenuRightNow} ) {
+function SubMenu( {item, showSubMenuRightNow, showSidebar} ) {
   const [subNav, setSubNav] = useState(false);
   const [textDecoration, setTextDecoration] = useState(false);
 
-  useEffect(() => {
-    setSubNav(showSubMenuRightNow)
-  }, [showSubMenuRightNow])
+ function showSubNav () {
+  setSubNav(!subNav);
 
-  const showSubNav = () => {
-    setSubNav(!subNav);
-    if (subNav) {
-      setTextDecoration(false)
-    } else {
-      setTextDecoration(styles.link)
-    };
+  // Открывает окно меню при нажатии на пункт с субменю
+  if (showSubMenuRightNow === false) {
+    showSidebar()
+  }
   };
+  
+  useEffect(() => {
+    //setSubNav(showSubMenuRightNow)
+    //Всегда закрываем все субменю перед закрытием основного меню
+    if (showSubMenuRightNow === false) {
+      setSubNav(showSubMenuRightNow)
+    } 
+  }, [showSubMenuRightNow])
+  
+  useEffect(() => {
+    if (subNav) {
+      setTextDecoration(styles.link);
+    } else {
+      setTextDecoration(false)
+    };
+  }, [subNav])
 
   //Убрано дублирование кода в отображении sidebar есть ли подменю или нет
   const showSidebarTitle = () => {
@@ -29,11 +43,8 @@ function SubMenu({item, showSubMenuRightNow} ) {
     )
   }
 
-
-
   return (
-    <>
-    {console.log()}
+    <>    
       <li className={`${item.cName}`} >
         <div className={item.cSubName} >
         {/*Разные стили и сслыки для пунктов с подменю и без*/}
@@ -53,15 +64,18 @@ function SubMenu({item, showSubMenuRightNow} ) {
                 {showSidebarTitle()}
               </Link>
           )}
-          
+          <TransitionGroup>
           {/*Выводим подменю */}
           {item.subNav && subNav && item.subNav.map((item, index) => {
              return (
-              <Link to={item.path}  key={index} className={item.cName}>
-              <span>{item.title}</span>
-              </Link>
-        )
-      })} 
+              <CSSTransition timeout={200} classNames={animationSubMenu} key={index}>
+                <Link to={item.path} className={item.cName}>
+                  <span>{item.title}</span>
+                </Link>
+              </CSSTransition>
+            )
+          })} 
+          </TransitionGroup>
         </div>  
       </li>
       

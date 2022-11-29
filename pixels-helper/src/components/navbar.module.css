@@ -81,9 +81,7 @@
   display: flex;
   align-items: center;
 
-  animation: toggleSubMenu 450ms linear ;
-  
-
+  /* animation: toggleSubMenu 450ms linear; */
 }
 
 .nav-text .link {
@@ -122,4 +120,3 @@ span {
     opacity: 1;
   }
 }
-
