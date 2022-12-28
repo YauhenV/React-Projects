@@ -1,11 +1,11 @@
-import InfoPage from "./components/info-page";
-import Sidebar from "./components/sidebar";
+import ConsumptionEnergy from "./routes/ConsumptionEnergy";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <Sidebar />
-      <InfoPage />
+      <Navbar />
+      <ConsumptionEnergy />
     </>
   );
 }

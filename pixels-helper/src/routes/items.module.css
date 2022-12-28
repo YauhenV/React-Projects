@@ -1,4 +1,45 @@
+.item {
+  cursor: pointer;
+}
 
 .item-header {
   font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.infoStyle {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoItem {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+}
+
+.infoItem > img {
+  margin: auto;
+}
+
+.infoText {
+  height: 1rem;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 1.5rem;
+}
+
+.textRed {
+  color:red;
+  margin-left: 0;
+}
+
+.textGreen {
+  color:#3cb043;
+  margin-left: 0;
 }
