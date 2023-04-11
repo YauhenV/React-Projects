@@ -1,0 +1,18 @@
+body {
+  background-color: #a0a0a0;
+}
+
+h2 {
+  margin: 0;
+}
+.wrapper {
+  max-width: 1170px;
+  margin: 3rem;
+}
+
+.note-editor__cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+}
